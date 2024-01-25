@@ -1,12 +1,17 @@
+import { Component } from 'react';
 import styles from './Feedback.module.css';
 import PropTypes from 'prop-types';
 
-const Section = ({ title, children }) => (
-  <div className={styles.feedbackContainer}>
-    <h2>{title}</h2>
-    {children}
-  </div>
-);
+class Section extends Component {
+  render() {
+    return (
+      <div className={styles.feedbackContainer}>
+        <h2>{this.props.title}</h2>
+        {this.props.children}
+      </div>
+    );
+  }
+}
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,

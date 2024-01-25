@@ -1,22 +1,27 @@
+import { Component } from 'react';
 import styles from './Feedback.module.css';
 import PropTypes from 'prop-types';
 
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
-  <ul>
-    <div className={styles.statistics}>
-      <li className={styles.good}>Good: {good}</li>
-      <li className={styles.neutral}>Neutral: {neutral}</li>
-      <li className={styles.bad}> Bad: {bad}</li>
-    </div>
+class Statistics extends Component {
+  render() {
+    return (
+      <ul>
+        <div className={styles.statistics}>
+          <li className={styles.good}>Good: {this.props.good}</li>
+          <li className={styles.neutral}>Neutral: {this.props.neutral}</li>
+          <li className={styles.bad}> Bad: {this.props.bad}</li>
+        </div>
 
-    <div className={styles.feedbackInfo}>
-      <li className={styles.total}>Total: {total}</li>
-      <li className={styles.positiveFeedback}>
-        Positive Feedback Percentage: {positivePercentage}%
-      </li>
-    </div>
-  </ul>
-);
+        <div className={styles.feedbackInfo}>
+          <li className={styles.total}>Total: {this.props.total}</li>
+          <li className={styles.positiveFeedback}>
+            Positive Feedback Percentage: {this.props.positivePercentage}%
+          </li>
+        </div>
+      </ul>
+    );
+  }
+}
 
 Statistics.propTypes = {
   good: PropTypes.number,
