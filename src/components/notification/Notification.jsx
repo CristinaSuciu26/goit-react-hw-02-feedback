@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import styles from './Feedback.module.css';
+import styles from './Notification.module.css';
 import PropTypes from 'prop-types';
 
 class Notification extends Component {
